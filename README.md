@@ -3,6 +3,25 @@
 **A declarative, distributed system for defining, registering, and executing graph-based AI workflows using Python modules.**
 Modular, resource-controlled, and integrated with human-in-the-loop and remote execution capabilities.
 
+### Project Status 🚧
+
+* **Alpha**: This project is in active development and subject to rapid change. ⚠️
+* **Testing Phase**: Features are experimental; expect bugs, incomplete functionality, and breaking changes. 🧪
+* **Not Production-Ready**: We **do not recommend using this in production** (or relying on it) right now. ⛔
+* **Compatibility**: APIs, schemas, and configuration may change without notice. 🔄
+* **Feedback Welcome**: Early feedback helps us stabilize future releases. 💬
+
+---
+
+## 📚 Contents 
+
+* [Index](https://pervasive-link-internal.pages.dev/)
+* [Central Executor](https://pervasive-link-internal.pages.dev/dsl/central-executor)
+* [Creating DSL](https://pervasive-link-internal.pages.dev/dsl/creating_dsl)
+* [Registry](https://pervasive-link-internal.pages.dev/dsl/registry)
+* [SDK v1](https://pervasive-link-internal.pages.dev/dsl/sdk)
+* [SDK v2](https://pervasive-link-internal.pages.dev/dsl/sdk_v2)
+
 ---
 
 ## 🌟 Highlights
@@ -133,32 +152,19 @@ Modular, resource-controlled, and integrated with human-in-the-loop and remote e
 
 ---
 
-## Links
+## 📢 Communications
 
-📚 Documentation [docs/](./docs/)
-📦 DSL Registry Server [src/dsl-registry/](./src/dsl-registry/)
-🧰 DSL Creator Server [src/dsl-creator/](./src/dsl-creator/)
-⚙️ Executor Infra APIs [src/dsl-infra/](./src/dsl-infra/)
-🧪 SDK & Runtime [src/dsl-executor/](./src/dsl-executor/)
+1. 📧 Email: [community@opencyberspace.org](mailto:community@opencyberspace.org)  
+2. 💬 Discord: [OpenCyberspace](https://discord.gg/W24vZFNB)  
+3. 🐦 X (Twitter): [@opencyberspace](https://x.com/opencyberspace)
 
 ---
 
-## 📜 License
+## 🤝 Join Us!
 
-Released under the [Apache 2.0 License](./LICENSE).
-Use, extend, and integrate freely.
+AIGrid is **community-driven**. Theory, Protocol, implementations - All contributions are welcome.
 
----
+### Get Involved
 
-## 🗣️ Get Involved
-
-We’re building modular, scalable, and intelligent DSL execution systems.
-
-* 🐛 Report issues or request features
-* ⭐ Star the repo if it helped
-* 🤝 Submit PRs for bugs, features, or docs
-* 💬 Join discussions to shape the roadmap
-
-Let’s build intelligent infrastructure that scales and adapts.
-
----
+- 💬 [Join our Discord](https://discord.gg/W24vZFNB)  
+- 📧 Email us: [community@opencyberspace.org](mailto:community@opencyberspace.org)
