@@ -1,15 +1,119 @@
-# 🚀 DSL Execution & Workflow Orchestration System
+# 🌐 Pervasive.link: Meta-Protocol for interconnect & coordination in the AI Societies.
 
-**A declarative, distributed system for defining, registering, and executing graph-based AI workflows using Python modules.**
-Modular, resource-controlled, and integrated with human-in-the-loop and remote execution capabilities.
 
-### Project Status 🚧
+**Pervasive.link** is a **meta-protocol for agentic interconnection & coordination**. Unlike conventional messaging or orchestration frameworks, it does not enforce a single execution model. Instead, it establishes a semantic, trust-anchored, and execution-neutral connection fabric that binds heterogeneous agents, infrastructures, and workflows into a shared coordination layer. This ensures that **diverse AI & agent architectures can communicate, collaborate, and evolve together without being constrained to a single technical or ideological paradigm**
 
-* **Alpha**: This project is in active development and subject to rapid change. ⚠️
-* **Testing Phase**: Features are experimental; expect bugs, incomplete functionality, and breaking changes. 🧪
-* **Not Production-Ready**: We **do not recommend using this in production** (or relying on it) right now. ⛔
-* **Compatibility**: APIs, schemas, and configuration may change without notice. 🔄
-* **Feedback Welcome**: Early feedback helps us stabilize future releases. 💬
+---
+
+## Why Pervasive.link?
+
+- When multi-agent systems (MAS) mature from isolated deployments into globally networked societies of AIs & Agents, the lack of a unifying coordination layer will be a critical bottleneck.
+
+- Current approaches often remain siloed, relying on localized standards, narrow-purpose protocols, or proprietary integrations that limit scalability, interoperability, and openness. Without a connective infrastructure, MAS ecosystems risk fragmentation, duplication of effort, and fragile trust dynamics.
+
+**Analogy**: Just as TCP/IP allowed disparate networks to converge into the Internet, Pervasive.link provides a universal meta-protocol that allows diverse agents and ecosystems to converge into a planetary-scale society of agents.
+
+**Goal**: Enable interoperability, alignment, and large-scale cooperation across heterogeneous agents and infrastructures.
+
+
+---
+
+## Core Principles
+
+- **Universality**: any agent/tool/env can speak the same envelope.
+- **Semantic grounding**: machine‑readable intents and capabilities, not just bytes.
+- **Trust & alignment**: provenance, attestations, and policy bindings travel on‑chain (cryptographically).
+- **Transport & execution neutrality**: HTTP, WebSocket, NATS, libp2p, containers, or services.
+- **Open‑endedness**: vocabularies, modules, and policies evolve without breaking existing systems.
+
+---
+
+## Two Implementation Paths (You Can Mix Both)
+
+Pervasive.link supports two complementary fronts; choose per context or combine.
+
+### 1) **Spec + Parser**
+
+In this mode, Pervasive.link acts as a front-end specification defining syntax, semantics, and interaction rules. On the back-end, a parser and interpreter enforce these rules as executable workflows, ensuring consistency, interoperability, and reliability—ideal for domains demanding compliance, verification, and determinism.
+
+- **Front end**: machine‑ and human‑readable **specs** (JSON Schema / JSON‑LD).  
+- **Back end**: **parser** that generates runtime artifacts such as validators, codecs, routers, and negotiation logic.
+
+**Developer Workflow**  
+1. Author/import a spec for a capability.  
+2. Run parser → generate validators, language bindings (e.g., Python/Go).  
+3. Implement capability logic behind generated interface.  
+4. Publish **AdvertiseCapability** referencing content‑addressed schema hashes.  
+5. Verify **Receipts** with parser‑generated checkers.
+
+**Example (spec fragment)**
+
+```json
+{
+  "$id": "pl.schema/Capability.v1",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "provider": { "type": "string" },
+    "io": {
+      "type": "object",
+      "properties": {
+        "input": { "type": "array" },
+        "output": { "type": "array" }
+      },
+      "required": ["input", "output"]
+    }
+  },
+  "required": ["id", "provider", "io"]
+}
+```
+
+**Strengths**: correctness, predictable interop, adoption by API‑centric teams.  
+**Tradeoffs**: slower schema evolution, heavier governance for changes.  
+**Best for**: regulated/assurance‑heavy domains; large vendor ecosystems.
+
+### 2) **DSL + Workflow**
+
+In this mode, Pervasive.link is expressed as a DSL, enabling agents to declare goals, states, and constraints through flexible constructs. Back-end orchestration engines execute these declarations dynamically, supporting adaptability and open-endedness - deal for evolving ecosystems, innovation networks, and expansive agent societies.
+
+- **Front end**: concise DSL for intents, plans, policies, selection logic.  
+- **Back end**: workflow engine compiles to a Task DAG, performs discovery/negotiation, executes, and emits receipts.
+
+**Sketch**
+
+```
+goal: SummarizeDocument
+inputs:
+  doc: cid:doc-123
+constraints:
+  length: "<400w"
+  deadline: "PT30S"
+policy:
+  require: [cid:pol-PII-no-exfil]
+select:
+  optimize: [readability:0.6, coverage:0.4, price:0.2]
+plan:
+  - map: FetchSections(doc)
+  - map: Summarize(section)
+  - reduce: MergeSummaries()
+  - join: AttachReferences()
+```
+
+**Strengths**: high expressiveness, fast iteration, great for evolving/open ecosystems.  
+**Tradeoffs**: more runtime complexity and observability needs.  
+**Best for**: cross‑domain, experimental, federated operator networks.
+
+### Interop Between Paths
+
+- **Spec → DSL**: generate DSL stubs from specs; compose in plans.  
+- **DSL → Spec**: stabilize recurring patterns into versioned schemas.  
+- **Common substrate**: same envelopes, identity, attestations, receipts, and policies.  
+- **Dual discovery**: capability descriptors can reference schema ids and DSL signatures.
+
+---
+
+🚧 **Project Status: Alpha**  
+_Not production-ready. See [Project Status](#project-status-) for details._
 
 ---
 
@@ -149,6 +253,30 @@ Modular, resource-controlled, and integrated with human-in-the-loop and remote e
 | `POST /dsl-executor/<id>/execute_dsl`    | Run a DSL task                      |
 | `POST /dsl-graph/<id>/estimate`          | Estimate resources for a DSL graph  |
 | `POST /dsl-graph/<id>/deploy`            | Deploy an adhoc DSL graph           |
+
+---
+
+# Project Status 🚧
+
+> ⚠️ **Development Status**  
+> The project is nearing full completion of version 1.0.0, with minor updates & optimization still being delivered.
+> 
+> ⚠️ **Alpha Release**  
+> Early access version. Use for testing only. Breaking changes may occur.  
+>
+> 🧪 **Testing Phase**  
+> Features are under active validation. Expect occasional issues and ongoing refinements.  
+>
+> ⛔ **Not Production-Ready**  
+> We do not recommend using this in production (or relying on it) right now. 
+> 
+> 🔄 **Compatibility**  
+> APIs, schemas, and configuration may change without notice.  
+>
+> 💬 **Feedback Welcome**  
+> Early feedback helps us stabilize future releases.  
+
+
 
 ---
 
