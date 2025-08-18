@@ -1,4 +1,4 @@
-# 🌐 Pervasive.link: Meta-Protocol for interconnect & coordination in the AI Societies.
+# 🌐 Pervasive.link: Meta-Protocol for connectivity, interoperability & coordination in the AI Societies.
 
 
 **Pervasive.link** is a **meta-protocol for agentic interconnection & coordination**. Unlike conventional messaging or orchestration frameworks, it does not enforce a single execution model. Instead, it establishes a semantic, trust-anchored, and execution-neutral connection fabric that binds heterogeneous agents, infrastructures, and workflows into a shared coordination layer. This ensures that **diverse AI & agent architectures can communicate, collaborate, and evolve together without being constrained to a single technical or ideological paradigm**
